@@ -1,0 +1,23 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{font-family:'Orbitron',sans-serif;background:#f5f1e8;overflow-x:hidden}
+
+/* Utilities */
+.hidden{opacity:0;pointer-events:none}
+
+/* Shared header */
+.site-head{position:fixed;top:0;left:0;width:100%;height:100px;pointer-events:none;z-index:50}
+.header-star{position:absolute;top:40px;left:40px;width:30px;height:30px;opacity:0}
+.header-line{position:absolute;top:55px;left:80px;width:calc(100% - 120px);height:2px;background:rgba(255,255,255,.28);opacity:0}
+
+.side-text{position:fixed;bottom:96px;color:#f5f1e8;font-size:12px;letter-spacing:2px;opacity:0;z-index:40}
+.side-text.left{left:40px}
+.side-text.right{right:40px}
+
+/* Title */
+.main-title{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:120px;font-weight:900;color:transparent;-webkit-text-stroke:2px #f5f1e8;text-stroke:2px #f5f1e8;letter-spacing:10px;z-index:10;opacity:0;overflow:hidden;white-space:nowrap}
+.main-title .title-fill{position:absolute;inset:0;height:0;background:linear-gradient(180deg,#c977ff,#7fb3ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;transition:height .8s ease}
+
+.explore-btn:hover + .main-title .title-fill{height:100%}
+
+

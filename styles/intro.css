@@ -1,0 +1,30 @@
+/* Intro layer */
+.intro-screen{position:fixed;inset:0;background:#f5f1e8;z-index:1000;display:grid;place-items:center;transition:opacity .8s ease}
+.intro-screen.hide{opacity:0;pointer-events:none}
+
+.star-seed{position:relative;width:120px;height:120px}
+.star-seed .piece{position:absolute;width:44px;height:44px;background:#c977ff;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);opacity:0}
+
+/* pieces slide into a near-star leaving a small gap, then dismantle outward */
+.star-seed .p1{animation:seedIn1 1.2s ease forwards, seedOut1 .9s ease forwards 2.2s}
+.star-seed .p2{animation:seedIn2 1.2s ease .1s forwards, seedOut2 .9s ease forwards 2.2s}
+.star-seed .p3{animation:seedIn3 1.2s ease .2s forwards, seedOut3 .9s ease forwards 2.2s}
+.star-seed .p4{animation:seedIn4 1.2s ease .3s forwards, seedOut4 .9s ease forwards 2.2s}
+
+@keyframes seedIn1{0%{opacity:0;top:-160px;left:38px}100%{opacity:1;top:-6px;left:38px}}
+@keyframes seedIn2{0%{opacity:0;bottom:-160px;left:38px}100%{opacity:1;bottom:-6px;left:38px}}
+@keyframes seedIn3{0%{opacity:0;left:-160px;top:38px}100%{opacity:1;left:-6px;top:38px}}
+@keyframes seedIn4{0%{opacity:0;left:160px;top:38px}100%{opacity:1;left:82px;top:38px}}
+
+/* dismantle away */
+@keyframes seedOut1{to{transform:translateY(-140px);opacity:.3}}
+@keyframes seedOut2{to{transform:translateY(140px);opacity:.3}}
+@keyframes seedOut3{to{transform:translateX(-140px);opacity:.3}}
+@keyframes seedOut4{to{transform:translateX(140px);opacity:.3}}
+
+/* ripple to reveal dark stage */
+.ripple{position:fixed;top:50%;left:50%;width:0;height:0;border-radius:50%;background:#1a1410;transform:translate(-50%,-50%);pointer-events:none;z-index:999}
+.ripple.active{animation:rippleEffect 1.5s ease-out forwards}
+@keyframes rippleEffect{to{width:300vmax;height:300vmax;opacity:1}}
+
+

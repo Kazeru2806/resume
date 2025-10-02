@@ -1,199 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Quan Phat Thanh - Personal Page</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fff;
-            color: #333;
-            line-height: 1.6;
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-            z-index: 1000;
-        }
-
-        .navbar ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .navbar ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-        }
-
-        .navbar ul li a:hover {
-            color: #555;
-        }
-
-        /* Main content */
-        .container {
-            max-width: 1100px;
-            margin: 100px auto 50px;
-            padding: 20px;
-        }
-
-        .hero {
-            text-align: center;
-            margin: 50px 0;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 60px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 16px;
-            color: #666;
-        }
-
-        .intro {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .intro p {
-            max-width: 700px;
-            margin: 10px auto;
-            font-size: 18px;
-            color: #555;
-        }
-
-        .highlight-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 50px 0;
-        }
-
-        .highlight-section img {
-            max-width: 300px;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .highlight-section .text {
-            max-width: 600px;
-            padding: 20px;
-        }
-
-        .highlight-section .text h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .highlight-section .text p {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .highlight-section .text button {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .highlight-section .text button:hover {
-            background-color: #555;
-        }
-
-        .description {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .description p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 20px;
-            color: #444;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+    <title>World of Thanh</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/intro.css">
+    <link rel="stylesheet" href="styles/page1.css">
 </head>
-
 <body>
-
-    <nav class="navbar">
-        <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="career.html">Career</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <div class="hero">
-            <h1>HI, I’M THANH</h1>
-            <p>A LITTLE BIT ABOUT ME</p>
-        </div>
-
-        <div class="intro">
-            <p>This is a space dedicated to sharing my story, career journey, and personal growth in technology and beyond.</p>
-        </div>
-
-        <div class="highlight-section">
-            <img src="https://cdn.donmai.us/original/bc/c9/bcc96ee45d25cddc58e48f7a1f3d696e.png" alt="Profile Picture">
-            <div class="text">
-                <h3>It all started with curiosity and a passion for coding.</h3>
-                <p>From my early days tinkering with computers to my current role as a technology instructor, my journey has always been driven by curiosity and a desire to create.</p>
-                <button onclick="window.location.href='career.html'">My Career Story</button>
-            </div>
-        </div>
-
-        <div class="description">
-            <p>This is a space dedicated to elevating my everyday experiences. To help you understand my work, my passion, my story...</p>
-            <p>I’m a technology enthusiast, game developer, and educator blending creativity and logic to solve problems and create engaging content.</p>
+    <div class="intro-screen" id="introScreen">
+        <div class="star-seed" aria-hidden="true">
+            <div class="piece p1"></div>
+            <div class="piece p2"></div>
+            <div class="piece p3"></div>
+            <div class="piece p4"></div>
         </div>
     </div>
 
-    <footer>
-        <p>© 2025 Le Quan Phat Thanh - All Rights Reserved</p>
-    </footer>
+    <div class="ripple" id="ripple"></div>
 
+    <main class="first-page" id="firstPage" aria-label="Landing">
+        <header class="site-head">
+            <div class="header-star" id="headerStar">
+                <div class="star">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="header-line"></div>
+        </header>
+
+        <div class="side-text left">Eumorphia & Nous</div>
+        <div class="side-text right">15°54'11.02" N 105°48'24.09" E ⏺</div>
+
+        <div class="sphere" id="sphere"></div>
+
+        <button class="explore-btn" id="exploreBtn" aria-label="Explore Surface">EXPLORE SURFACE</button>
+
+        <h1 class="main-title" id="mainTitle">WINDOM<span class="title-fill" aria-hidden="true">WINDOM</span></h1>
+    </main>
+
+    <div class="tiles" id="tiles"></div>
+
+    <script src="scripts/intro.js" defer></script>
+    <script src="scripts/page1.js" defer></script>
 </body>
 </html>

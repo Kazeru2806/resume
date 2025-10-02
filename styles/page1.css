@@ -1,0 +1,29 @@
+.first-page{position:relative;width:100%;min-height:100vh;background:#1a1410;opacity:0;transition:opacity 1s ease;overflow:hidden}
+.first-page.show{opacity:1}
+
+/* header star replica (4 rhombi) */
+.header-star .star{position:relative;width:100%;height:100%}
+.header-star .star span{position:absolute;display:block;width:17px;height:17px;background:#c977ff;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%)}
+.header-star .star span:nth-child(1){top:-7px;left:6.5px}
+.header-star .star span:nth-child(2){bottom:-7px;left:6.5px}
+.header-star .star span:nth-child(3){left:-7px;top:6.5px}
+.header-star .star span:nth-child(4){right:-7px;top:6.5px}
+
+/* staged reveals */
+.reveal{animation:fadeIn .9s ease forwards}
+@keyframes fadeIn{to{opacity:1}}
+
+/* glowing sphere path */
+.sphere{position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffb3d9,#c9a0dc,#a0c9ff);filter:blur(40px);opacity:0;z-index:1;animation:sphereAnim 6s ease forwards 4.5s}
+@keyframes sphereAnim{0%{opacity:0;top:50%;left:50%;transform:translate(-50%,-50%) scale(.5)}20%{opacity:.85;top:50%;left:50%;transform:translate(-50%,-50%) scale(1)}55%{top:32%;left:70%;transform:translate(-50%,-50%) scale(1)}100%{opacity:1;top:100%;left:50%;transform:translate(-50%,-30%) scale(1.9)}}
+
+.explore-btn{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);padding:15px 50px;background:transparent;color:#f5f1e8;border:2px solid #f5f1e8;border-radius:30px;font-size:14px;letter-spacing:3px;cursor:pointer;z-index:20;opacity:0;transition:all .3s ease;pointer-events:none}
+.explore-btn:hover{background:#f5f1e8;color:#1a1410;transform:translateX(-50%) scale(1.05)}
+
+/* tiles transition */
+.tiles{position:fixed;inset:0;pointer-events:none;z-index:9999;display:grid;grid-template-columns:repeat(10,1fr);grid-template-rows:repeat(6,1fr)}
+.tiles>div{background:#f4c84c;transform:scaleY(0);transform-origin:bottom}
+.tiles.active>div{animation:tileIn .8s ease forwards}
+@keyframes tileIn{to{transform:scaleY(1)}}
+
+
