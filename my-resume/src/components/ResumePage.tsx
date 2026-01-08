@@ -251,7 +251,7 @@ export default function ResumePage() {
                         {/* Photo Card with hover effect */}
                         <div className="card-hover" style={{ backgroundColor: 'white', padding: '1rem', borderRadius: '1.25rem', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)', transform: 'rotate(2deg)', width: '420px' }}>
                             <img
-                                src="/src/assets/profile.png"
+                                src="/profile.png"
                                 alt="Thanh Le"
                                 style={{ width: '100%', height: '20rem', objectFit: 'cover', borderRadius: '0.75rem' }}
                             />
