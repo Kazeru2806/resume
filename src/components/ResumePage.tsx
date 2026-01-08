@@ -186,7 +186,7 @@ export default function ResumePage() {
 
                 {/* Header with animation */}
                 <div style={{ textAlign: 'right', marginBottom: '2rem', animation: 'fadeInUp 0.8s ease-out 0.8s backwards' }}>
-                    <p style={{ color: '#1d4ed8', fontSize: '0.875rem' }}>Thanh Le</p>
+                    <p style={{ color: '#1d4ed8', fontSize: '0.875rem' }}>Made by Thành (Kazeru) Lê Quan Phát</p>
                 </div>
 
                 {/* Portfolio Header Image with animation */}
