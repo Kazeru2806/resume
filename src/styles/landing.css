@@ -5,6 +5,7 @@
     opacity: 0;
     transition: opacity 1s ease;
     overflow: hidden;
+    min-width: 1200px;
 }
 
 .first-page.show {

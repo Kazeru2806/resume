@@ -186,7 +186,7 @@ export default function ResumePage() {
 
                 {/* Header with animation */}
                 <div style={{ textAlign: 'right', marginBottom: '2rem', animation: 'fadeInUp 0.8s ease-out 0.8s backwards' }}>
-                    <p style={{ color: '#1d4ed8', fontSize: '1rem' }}>Made by Thành (Kazeru) Lê Quan Phát</p>
+                    <p style={{ color: '#1d4ed8', fontSize: '0.875rem' }}>Thanh Le</p>
                 </div>
 
                 {/* Portfolio Header Image with animation */}
@@ -294,22 +294,44 @@ export default function ResumePage() {
                         <h3 style={{ color: '#1d4ed8', fontWeight: '900', fontSize: '1.25rem', marginBottom: '1.5rem' }}>EXPERIENCES</h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '0.8rem' }}>
                             <div>
-                                <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>2024–Present</p>
-                                <p style={{ fontWeight: '700', color: '#1f2937', marginBottom: '0.25rem' }}>CODING & ROBOTICS LECTURER</p>
-                                <p style={{ color: '#374151', marginBottom: '0.25rem' }}>Teacher at MindX Technology School</p>
-                                <p style={{ color: '#4b5563' }}>First teacher in Southern region qualified to teach three subjects: Coding, Robotics, Art</p>
+                                <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>2024 – Present</p>
+                                <p style={{ fontWeight: '700', color: '#1f2937', marginBottom: '0.25rem' }}>CODING AND ROBOTICS LECTURER</p>
+                                <p style={{ color: '#374151', marginBottom: '0.25rem' }}>MindX - Technology School</p>
+                                <ul style={{ color: '#4b5563', paddingLeft: 0, marginTop: '0.25rem', lineHeight: '1.6' }}>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Coding Lecturer for individuals from 8 - 18 years of age in the subjects such as Scratch, Game Maker, Python, Web Development,...</li>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Robotics Lecturer for individuals from 6 - 12 years of age in the subjects using VEX GO kit, VEX IQ kit.</li>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>The first teacher in the entire Southern region qualified to teach three subjects: Coding, Robotics, and Art.</li>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>One of the pioneering teachers in the Southern region to introduce and teach a new subject branch (Robotics 4+).</li>
+                                </ul>
                             </div>
                             <div>
-                                <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>2024–Present</p>
-                                <p style={{ fontWeight: '700', color: '#1f2937', marginBottom: '0.25rem' }}>DEVELOPER</p>
-                                <p style={{ color: '#374151', marginBottom: '0.25rem' }}>Freelance Full-stack Developer</p>
-                                <p style={{ color: '#4b5563' }}>Developed dining guide and fruit selling website using React, Tailwind CSS, and JavaScript</p>
+                                <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>2025 – Present</p>
+                                <p style={{ fontWeight: '700', color: '#1f2937', marginBottom: '0.25rem' }}>WEB-APP DEVELOPMENT - DINING GUIDE WEB</p>
+                                <p style={{ color: '#374151', marginBottom: '0.25rem' }}>University Project</p>
+                                <ul style={{ color: '#4b5563', paddingLeft: 0, marginTop: '0.25rem', lineHeight: '1.6' }}>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Developed a dining guide website using React, Tailwind CSS, and JavaScript, taking on both frontend and backend responsibilities.</li>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Designed the UI/UX concept and style direction in Figma, ensuring a consistent and user-friendly visual identity across the website.</li>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Implemented responsive layouts and interactive features on the frontend while also handling backend logic and data management.</li>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Collaborated across the full stack to deliver a seamless experience, from visual design to system functionality.</li>
+                                </ul>
                             </div>
                             <div>
-                                <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>2021–2023</p>
+                                <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>2024 – 2025</p>
+                                <p style={{ fontWeight: '700', color: '#1f2937', marginBottom: '0.25rem' }}>WEB-APP DEVELOPMENT - FRUIT SELLING MANAGEMENT</p>
+                                <p style={{ color: '#374151', marginBottom: '0.25rem' }}>University Project</p>
+                                <ul style={{ color: '#4b5563', paddingLeft: 0, marginTop: '0.25rem', lineHeight: '1.6' }}>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Built and maintained a fruit selling management system, focusing on the Admin dashboard for efficient business operations.</li>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Designed and implemented the admin interface with React, Tailwind CSS, and JavaScript, ensuring usability and clarity for daily management tasks.</li>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Developed features for inventory tracking, order management, and product categorization, optimizing workflow for administrators.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>2021 – 2023</p>
                                 <p style={{ fontWeight: '700', color: '#1f2937', marginBottom: '0.25rem' }}>GRAPHIC DESIGNER</p>
                                 <p style={{ color: '#374151', marginBottom: '0.25rem' }}>Designer at IU ArTeam</p>
-                                <p style={{ color: '#4b5563' }}>Designed promotional materials for events</p>
+                                <ul style={{ color: '#4b5563', paddingLeft: 0, marginTop: '0.25rem', lineHeight: '1.6' }}>
+                                    <li style={{ paddingLeft: '1.3rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Designed promotional materials for events.</li>
+                                </ul>
                             </div>
                         </div>
                         <div style={{ position: 'absolute', top: '3rem', left: '-2rem', color: '#2563eb', fontSize: '1.25rem', animation: 'twinkle 3s ease-in-out infinite 1.5s' }}>✦</div>
@@ -329,6 +351,23 @@ export default function ResumePage() {
                                 <p style={{ fontWeight: '700', color: '#1f2937', marginBottom: '0.25rem' }}>Nguyen Chi Thanh High School</p>
                                 <p style={{ color: '#4b5563' }}>A01</p>
                             </div>
+                            <div style={{ marginTop: '0.5rem' }}>
+                                <h3 style={{ color: '#1d4ed8', fontWeight: '900', fontSize: '1.25rem', marginBottom: '0.35rem' }}>LANGUAGES</h3>
+                                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                                    <div style={{ backgroundColor: '#e5e7eb', color: '#1f2937', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>English (Fluent)</div>
+                                    <div style={{ backgroundColor: '#e5e7eb', color: '#1f2937', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>Japanese (Beginner)</div>
+                                    <div style={{ backgroundColor: '#e5e7eb', color: '#1f2937', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>Vietnamese (Native)</div>
+                                </div>
+
+                                <h3 style={{ color: '#1d4ed8', fontWeight: '900', fontSize: '1.25rem', margin: '0.75rem 0 0.35rem 0' }}>HOBBIES</h3>
+                                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                                    <div style={{ backgroundColor: '#fff7ed', color: '#92400e', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>Dancing</div>
+                                    <div style={{ backgroundColor: '#eef2ff', color: '#3730a3', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>Music</div>
+                                    <div style={{ backgroundColor: '#ecfccb', color: '#365314', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>Reading</div>
+                                    <div style={{ backgroundColor: '#fde68a', color: '#92400e', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>Cat, cat & cat</div>
+                                </div>
+                            </div>
+
                         </div>
                         <div style={{ position: 'absolute', bottom: '3rem', left: '33%', color: '#f87171', fontSize: '1.25rem', animation: 'pulse 3.2s ease-in-out infinite 1.8s' }}>✨</div>
                     </div>
@@ -388,6 +427,26 @@ export default function ResumePage() {
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Additional Expertise Pills Column (Java/JS/C, CSS/HTML, MySQL, Microsoft SQL, PostGreSQL) */}
+                            <div style={{ position: 'absolute', top: '0.5rem', right: '-0.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'flex-end', animation: 'floatSlow 3.5s ease-in-out infinite 0.3s' }}>
+                                <div style={{ transform: 'rotate(6deg)' }}>
+                                    <div style={{ backgroundColor: '#0f172a', color: 'white', padding: '0.4rem 0.9rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>Java/JavaScript/C</div>
+                                </div>
+                                <div style={{ transform: 'rotate(-6deg)' }}>
+                                    <div style={{ backgroundColor: '#2563eb', color: 'white', padding: '0.35rem 0.8rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>CSS/HTML</div>
+                                </div>
+                                <div style={{ transform: 'rotate(4deg)' }}>
+                                    <div style={{ backgroundColor: '#0ea5a4', color: 'white', padding: '0.35rem 0.8rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>MySQL</div>
+                                </div>
+                                <div style={{ transform: 'rotate(-4deg)' }}>
+                                    <div style={{ backgroundColor: '#7c3aed', color: 'white', padding: '0.35rem 0.8rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>Microsoft SQL</div>
+                                </div>
+                                <div style={{ transform: 'rotate(2deg)' }}>
+                                    <div style={{ backgroundColor: '#16a34a', color: 'white', padding: '0.35rem 0.8rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>PostGreSQL</div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
