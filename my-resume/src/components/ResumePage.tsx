@@ -192,7 +192,7 @@ export default function ResumePage() {
                 {/* Portfolio Header Image with animation */}
                 <div style={{ marginBottom: '3rem', textAlign: 'center', animation: 'fadeInUp 1s ease-out 1s backwards' }}>
                     <img
-                        src="/src/assets/header.png"
+                        src="/header.png"
                         alt="Portfolio Header"
                         style={{ maxWidth: '100%', height: 'auto' }}
                     />
