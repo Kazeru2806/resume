@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 export default function ResumePage() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [scrollY, setScrollY] = useState(0);
+    const [visiblePhotos, setVisiblePhotos] = useState<number[]>([]);
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -11,7 +12,21 @@ export default function ResumePage() {
         };
 
         const handleScroll = () => {
-            setScrollY(window.scrollY);
+            const currentScroll = window.scrollY;
+            setScrollY(currentScroll);
+
+            // Calculate which photos should be visible based on scroll
+            // Photos start appearing after scrolling past hobbies section (~800px)
+            const photosStartPoint = 800;
+            const photoInterval = 200; // Pixels to scroll for each photo
+
+            if (currentScroll > photosStartPoint) {
+                const scrollPastStart = currentScroll - photosStartPoint;
+                const photosToShow = Math.min(Math.floor(scrollPastStart / photoInterval) + 1, 6);
+                setVisiblePhotos(Array.from({ length: photosToShow }, (_, i) => i));
+            } else {
+                setVisiblePhotos([]);
+            }
         };
 
         window.addEventListener('mousemove', handleMouseMove);
@@ -22,6 +37,31 @@ export default function ResumePage() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    // Portfolio images data
+    const portfolioImages = [
+        { title: "Dining Guide Web", img: '/dining.png' },
+        { title: "Fruit Management", img: "/fruit.png" },
+        { title: "Panorama Stitcher", img: "/panorama.png" },
+        { title: "Designing", img: '/designing.png' },
+        { title: "Robotics Class", img: '/roboclass.png' },
+        { title: "Coding Class", img: "/coding.png" },
+    ];
+
+    // Calculate cloud position based on scroll
+    const [scrollOffsetY, setScrollOffsetY] = useState(0);
+
+    useEffect(() => {
+        const onScroll = () => {
+            setScrollOffsetY(window.scrollY);
+        };
+
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    const cloudOffset = Math.min(scrollOffsetY * 0.5, 300);
+
 
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#e8e8e3', padding: '2rem', position: 'relative', overflow: 'hidden' }}>
@@ -60,12 +100,48 @@ export default function ResumePage() {
           from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes splashIn {
+          0% { 
+            opacity: 0; 
+            transform: translateY(100px) scale(0.5) rotate(-10deg); 
+          }
+          60% { 
+            opacity: 1; 
+            transform: translateY(-10px) scale(1.05) rotate(2deg); 
+          }
+          100% { 
+            opacity: 1; 
+            transform: translateY(0) scale(1) rotate(0deg); 
+          }
+        }
+        @keyframes splashOut {
+          0% { 
+            opacity: 1; 
+            transform: translateY(0) scale(1) rotate(0deg); 
+          }
+          100% { 
+            opacity: 0; 
+            transform: translateY(100px) scale(0.5) rotate(-10deg); 
+          }
+        }
+       @keyframes cloudFloat {
+             0%, 100% { margin-top: 0px; }
+            50% { margin-top: -18px; }
+        }
+
         .card-hover {
           transition: all 0.3s ease;
         }
         .card-hover:hover {
           transform: rotate(0deg) scale(1.05) !important;
           box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+        .polaroid-photo {
+          transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .polaroid-photo:hover {
+          transform: scale(1.05) rotate(-2deg);
+          box-shadow: 0 30px 60px -12px rgba(0,0,0,0.3);
         }
         .tiles-in {
           position: fixed;
@@ -189,12 +265,50 @@ export default function ResumePage() {
                     <p style={{ color: '#1d4ed8', fontSize: '0.875rem' }}>Made by Thành (Kazeru) Lê Quan Phát</p>
                 </div>
 
-                {/* Portfolio Header Image with animation */}
-                <div style={{ marginBottom: '3rem', textAlign: 'center', animation: 'fadeInUp 1s ease-out 1s backwards' }}>
+                {/* Portfolio Header Image with animation and clouds */}
+                <div style={{ marginBottom: '3rem', textAlign: 'center', animation: 'fadeInUp 1s ease-out 1s backwards', position: 'relative' }}>
+                    {/* Left Cloud */}
+                    <img
+                        src="/cloud1.png"
+                        alt="Left Cloud"
+                        style={{
+                            position: 'absolute',
+                            left: '-220px',
+                            top: '70%',
+                            transform: `translate(-${cloudOffset}px, -50%)`,
+                            width: '720px',
+                            opacity: 0.8,
+                            animation: 'cloudFloat 4s ease-in-out infinite',
+                            zIndex: 3,
+                            pointerEvents: 'none'
+                        }}
+                    />
+
+
+
+                    {/* Right Cloud */}
+                    <img
+                        src="/cloud2.png"
+                        alt="Right Cloud"
+                        style={{
+                            position: 'absolute',
+                            right: '-220px',
+                            top: '20%',
+                            transform: `translate(${cloudOffset}px, -50%)`,
+                            width: '720px',
+                            opacity: 0.8,
+                            animation: 'cloudFloat 4s ease-in-out infinite',
+                            zIndex: 3,
+                            pointerEvents: 'none'
+                        }}
+                    />
+
+
+
                     <img
                         src="/header.png"
                         alt="Portfolio Header"
-                        style={{ maxWidth: '100%', height: 'auto' }}
+                        style={{ maxWidth: '100%', height: 'auto', position: 'relative', zIndex: 2 }}
                     />
                 </div>
 
@@ -300,11 +414,11 @@ export default function ResumePage() {
                     </div>
                 </div>
 
-                {/* Experience, Education, Expertise Section - THREE COLUMNS with animation */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2.5rem', position: 'relative', marginTop: '4rem' }}>
+                {/* Experience, Education, Expertise Section - CUSTOM LAYOUT with animation */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2.5rem', position: 'relative', marginTop: '4rem' }}>
 
-                    {/* Experiences */}
-                    <div style={{ animation: 'fadeInUp 1s ease-out 1.6s backwards' }}>
+                    {/* Experiences - Left Column (Spans both rows) */}
+                    <div style={{ animation: 'fadeInUp 1s ease-out 1.6s backwards', gridRow: '1 / 3' }}>
                         <h3 style={{ color: '#1d4ed8', fontWeight: '900', fontSize: '1.25rem', marginBottom: '1.5rem' }}>EXPERIENCES</h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '0.8rem' }}>
                             <div>
@@ -357,7 +471,7 @@ export default function ResumePage() {
                             </div>
                             <div>
                                 <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>2021 – 2023</p>
-                                <a href="https://windomofdesigning.mystrikingly.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                <a href="https://kazeru2806.github.io/design_porfolio/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                     <p style={{ fontWeight: '700', color: '#1d4ed8', marginBottom: '0.25rem', cursor: 'pointer', transition: 'all 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'} onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}>GRAPHIC DESIGNER</p>
                                 </a>
                                 <p style={{ color: '#374151', marginBottom: '0.25rem' }}>Designer at IU ArTeam</p>
@@ -371,7 +485,7 @@ export default function ResumePage() {
                         <div style={{ position: 'absolute', top: '3rem', left: '-2rem', color: '#2563eb', fontSize: '1.25rem', animation: 'twinkle 3s ease-in-out infinite 1.5s' }}>✦</div>
                     </div>
 
-                    {/* Education */}
+                    {/* Middle Column - Education, Languages, Hobbies, Project Showcase Title */}
                     <div style={{ animation: 'fadeInUp 1s ease-out 1.8s backwards' }}>
                         <h3 style={{ color: '#1d4ed8', fontWeight: '900', fontSize: '1.25rem', marginBottom: '1.5rem' }}>EDUCATION</h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '0.8rem' }}>
@@ -400,13 +514,53 @@ export default function ResumePage() {
                                     <div style={{ backgroundColor: '#ecfccb', color: '#365314', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>Reading</div>
                                     <div style={{ backgroundColor: '#fde68a', color: '#92400e', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>Cat, cat & cat</div>
                                 </div>
-                            </div>
 
+                                <h3 style={{ color: '#1d4ed8', fontWeight: '900', fontSize: '1.25rem', margin: '0.75rem 0 0.35rem 0' }}>PROJECT SHOWCASE</h3>
+                            </div>
+                        </div>
+
+                        {/* Gallery Column 1 (Middle) - First 3 photos */}
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem', marginTop: '1rem' }}>
+                            {portfolioImages.slice(0, 3).map((photo, index) => (
+                                <div
+                                    key={index}
+                                    className="polaroid-photo"
+                                    style={{
+                                        backgroundColor: 'white',
+                                        padding: '0.75rem',
+                                        paddingBottom: '1.5rem',
+                                        borderRadius: '0.5rem',
+                                        boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                                        transform: `rotate(${index % 2 === 0 ? '2deg' : '-2deg'})`,
+                                    }}
+                                >
+                                    <img
+                                        src={photo.img}
+                                        alt={photo.title}
+                                        style={{
+                                            width: '100%',
+                                            height: '250px',
+                                            objectFit: 'cover',
+                                            borderRadius: '0.25rem',
+                                            marginBottom: '0.75rem'
+                                        }}
+                                    />
+                                    <p style={{
+                                        textAlign: 'center',
+                                        fontWeight: '600',
+                                        color: '#1f2937',
+                                        fontFamily: 'Courier New, monospace',
+                                        fontSize: '0.8rem'
+                                    }}>
+                                        {photo.title}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                         <div style={{ position: 'absolute', bottom: '3rem', left: '33%', color: '#f87171', fontSize: '1.25rem', animation: 'pulse 3.2s ease-in-out infinite 1.8s' }}>✨</div>
                     </div>
 
-                    {/* Expertise */}
+                    {/* Right Column - Expertise and Gallery Photos (Last 3) */}
                     <div style={{ animation: 'fadeInUp 1s ease-out 2s backwards' }}>
                         <h3 style={{ color: '#1d4ed8', fontWeight: '900', fontSize: '1.25rem', marginBottom: '1.5rem' }}>EXPERTISE</h3>
 
@@ -434,7 +588,7 @@ export default function ResumePage() {
                         </div>
 
                         {/* Sticker Badges */}
-                        <div style={{ position: 'relative', height: '8rem' }}>
+                        <div style={{ position: 'relative', minHeight: '8rem', paddingBottom: '6rem', marginBottom: '1.5rem' }}>
                             <div style={{ position: 'absolute', transform: 'rotate(-12deg)', animation: 'float 3s ease-in-out infinite' }}>
                                 <div style={{ background: 'linear-gradient(to bottom right, #4ade80, #22c55e)', color: 'white', padding: '0.5rem 1rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.75rem', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', border: '2px solid white' }}>
                                     React
@@ -463,7 +617,7 @@ export default function ResumePage() {
                             </div>
 
                             {/* Additional Expertise Pills Column (Java/JS/C, CSS/HTML, MySQL, Microsoft SQL, PostGreSQL) */}
-                            <div style={{ position: 'absolute', top: '0.5rem', right: '-0.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'flex-end', animation: 'floatSlow 3.5s ease-in-out infinite 0.3s' }}>
+                            <div style={{ position: 'relative', top: '0.5rem', right: '-0.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'flex-end', animation: 'floatSlow 3.5s ease-in-out infinite 0.3s' }}>
                                 <div style={{ transform: 'rotate(6deg)' }}>
                                     <div style={{ backgroundColor: '#0f172a', color: 'white', padding: '0.4rem 0.9rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>Java/JavaScript/C</div>
                                 </div>
@@ -482,8 +636,49 @@ export default function ResumePage() {
                             </div>
 
                         </div>
-                    </div>
 
+
+                        {/* Gallery - Last 3 photos: force into Column 3 (second row) */}
+                        <div style={{ gridColumn: '3', gridRow: '2 / 3' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem', marginTop: '-3.5rem' }}>
+                                {portfolioImages.slice(3, 6).map((photo, index) => (
+                                    <div
+                                        key={index + 3}
+                                        className="polaroid-photo"
+                                        style={{
+                                            backgroundColor: 'white',
+                                            padding: '0.75rem',
+                                            paddingBottom: '1.5rem',
+                                            borderRadius: '0.5rem',
+                                            boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                                            transform: `rotate(${(index + 3) % 2 === 0 ? '2deg' : '-2deg'})`,
+                                        }}
+                                    >
+                                        <img
+                                            src={photo.img}
+                                            alt={photo.title}
+                                            style={{
+                                                width: '100%',
+                                                height: '250px',
+                                                objectFit: 'cover',
+                                                borderRadius: '0.25rem',
+                                                marginBottom: '0.75rem'
+                                            }}
+                                        />
+                                        <p style={{
+                                            textAlign: 'center',
+                                            fontWeight: '600',
+                                            color: '#1f2937',
+                                            fontFamily: 'Courier New, monospace',
+                                            fontSize: '0.8rem'
+                                        }}>
+                                            {photo.title}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Bottom decorative elements */}
