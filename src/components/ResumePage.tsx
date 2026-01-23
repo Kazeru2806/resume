@@ -41,7 +41,7 @@ export default function ResumePage() {
     // Portfolio images data
     const portfolioImages = [
         { title: "Dining Guide Web", img: '/dining.png' },
-        { title: "Fruit Management", img: "/fruit.png" },
+        { title: "Robogen Winner", img: "/robogen.png" },
         { title: "Panorama Stitcher", img: "/panorama.png" },
         { title: "Designing", img: '/designing.png' },
         { title: "Robotics Class", img: '/roboclass.png' },
@@ -430,6 +430,8 @@ export default function ResumePage() {
                                     <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Robotics Lecturer for individuals from 6 - 12 years of age in the subjects using VEX GO kit, VEX IQ kit.</li>
                                     <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>The first teacher in the entire Southern region qualified to teach three subjects: Coding, Robotics, and Art.</li>
                                     <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>One of the pioneering teachers in the Southern region to introduce and teach a new subject branch (Robotics 4+).</li>
+                                    <li style={{ paddingLeft: '1.2rem', marginBottom: '0.4rem' }}><span style={{ display: 'inline-block', width: '0.6rem', marginLeft: '-1.2rem', marginRight: '0.5rem', color: '#000000ff' }}>✦</span>Robotics coach that mentored and guided a student robotics team to achieve the Robot Creativity Award at the Robogen Competition.</li>
+
                                 </ul>
                             </div>
                             <div>
@@ -493,6 +495,8 @@ export default function ResumePage() {
                                 <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>2021 – Present</p>
                                 <p style={{ fontWeight: '700', color: '#1f2937', marginBottom: '0.25rem' }}>International University, VNU-HCMC</p>
                                 <p style={{ color: '#4b5563' }}>Information Technology - Network Engineering</p>
+                                <p style={{ color: '#4b5563' }}>GPA: 3.2/4.0</p>
+
                             </div>
                             <div>
                                 <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>2018 – 2021</p>
