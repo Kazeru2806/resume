@@ -306,7 +306,7 @@ export default function ResumePage() {
 
 
                     <img
-                        src="/header.png"
+                        src="/P.png"
                         alt="Portfolio Header"
                         style={{ maxWidth: '100%', height: 'auto', position: 'relative', zIndex: 2 }}
                     />
@@ -571,10 +571,16 @@ export default function ResumePage() {
                         {/* Software Icons with hover effect */}
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem' }}>
                             {[
-                                { bg: '#2563eb', label: 'Ps', name: 'Photoshop' },
-                                { bg: '#ea580c', label: 'Ai', name: 'Illustrator' },
-                                { bg: '#9333ea', label: 'Pr', name: 'Premiere' },
-                                { bg: '#374151', label: 'Git', name: 'GitHub' }
+                                { bg: '#2563eb', label: 'React', name: 'React Developer' },
+                                { bg: '#ea580c', label: 'Java', name: 'Java Developer' },
+                                { bg: '#9333ea', label: 'JavaScript', name: 'JavaScript Developer' },
+                                { bg: '#374151', label: 'C++', name: 'C++ Developer' },
+                                { bg: '#86bf91ff', label: 'TypeScript', name: 'TypeScript Developer' },
+                                { bg: '#5e48c3ff', label: 'CSS/HTML', name: 'Web Developer' },
+                                { bg: '#e693d8ff', label: 'MySQL', name: 'MySQL Developer' },
+                                { bg: '#1e40af', label: 'PostgreSQL', name: 'PostgreSQL Developer' }
+
+
                             ].map((item, i) => (
                                 <div key={i} style={{ backgroundColor: item.bg, color: 'white', borderRadius: '0.5rem', padding: '0.75rem', textAlign: 'center', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', transition: 'all 0.3s ease', cursor: 'pointer' }}
                                     onMouseEnter={(e) => {
@@ -595,13 +601,13 @@ export default function ResumePage() {
                         <div style={{ position: 'relative', minHeight: '8rem', paddingBottom: '6rem', marginBottom: '1.5rem' }}>
                             <div style={{ position: 'absolute', transform: 'rotate(-12deg)', animation: 'float 3s ease-in-out infinite' }}>
                                 <div style={{ background: 'linear-gradient(to bottom right, #4ade80, #22c55e)', color: 'white', padding: '0.5rem 1rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.75rem', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', border: '2px solid white' }}>
-                                    React
+                                    Figma
                                 </div>
                             </div>
 
                             <div style={{ position: 'absolute', top: '2rem', left: '2rem', transform: 'rotate(6deg)', animation: 'floatSlow 3.5s ease-in-out infinite 0.5s' }}>
                                 <div style={{ backgroundColor: '#2563eb', color: 'white', padding: '0.5rem 1rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.75rem', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', border: '2px solid white' }}>
-                                    TYPESCRIPT
+                                    Photoshop
                                 </div>
                             </div>
 
@@ -613,7 +619,7 @@ export default function ResumePage() {
 
                             <div style={{ position: 'absolute', top: '5rem', left: '4rem', transform: 'rotate(12deg)', animation: 'floatSlow 3.8s ease-in-out infinite 1.5s' }}>
                                 <div style={{ position: 'relative', backgroundColor: '#ef4444', color: 'white', padding: '0.5rem 1rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.75rem', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', border: '2px solid #fde047' }}>
-                                    CODE!
+                                    Illustrator
                                     <div style={{ position: 'absolute', top: '-0.25rem', right: '-0.25rem', backgroundColor: '#fde047', width: '1.5rem', height: '1.5rem', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.5rem', fontWeight: '900', color: '#ef4444', clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', animation: 'rotate 4s linear infinite' }}>
                                         <span style={{ color: '#ef4444' }}>★</span>
                                     </div>
@@ -623,19 +629,13 @@ export default function ResumePage() {
                             {/* Additional Expertise Pills Column (Java/JS/C, CSS/HTML, MySQL, Microsoft SQL, PostGreSQL) */}
                             <div style={{ position: 'relative', top: '0.5rem', right: '-0.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'flex-end', animation: 'floatSlow 3.5s ease-in-out infinite 0.3s' }}>
                                 <div style={{ transform: 'rotate(6deg)' }}>
-                                    <div style={{ backgroundColor: '#0f172a', color: 'white', padding: '0.4rem 0.9rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>Java/JavaScript/C</div>
+                                    <div style={{ backgroundColor: '#0f172a', color: 'white', padding: '0.4rem 0.9rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>Premiere</div>
                                 </div>
                                 <div style={{ transform: 'rotate(-6deg)' }}>
-                                    <div style={{ backgroundColor: '#2563eb', color: 'white', padding: '0.35rem 0.8rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>CSS/HTML</div>
+                                    <div style={{ backgroundColor: '#2563eb', color: 'white', padding: '0.35rem 0.8rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>After Effect</div>
                                 </div>
                                 <div style={{ transform: 'rotate(4deg)' }}>
-                                    <div style={{ backgroundColor: '#0ea5a4', color: 'white', padding: '0.35rem 0.8rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>MySQL</div>
-                                </div>
-                                <div style={{ transform: 'rotate(-4deg)' }}>
-                                    <div style={{ backgroundColor: '#7c3aed', color: 'white', padding: '0.35rem 0.8rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>Microsoft SQL</div>
-                                </div>
-                                <div style={{ transform: 'rotate(2deg)' }}>
-                                    <div style={{ backgroundColor: '#16a34a', color: 'white', padding: '0.35rem 0.8rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>PostGreSQL</div>
+                                    <div style={{ backgroundColor: '#0ea5a4', color: 'white', padding: '0.35rem 0.8rem', borderRadius: '9999px', fontWeight: '700', fontSize: '0.72rem', boxShadow: '0 8px 12px rgba(0,0,0,0.08)' }}>CapCut</div>
                                 </div>
                             </div>
 
