@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import IntroAnimation from './components/IntroAnimation';
 import LandingPage from './components/LandingPage';
 import ResumePage from './components/ResumePage';
@@ -7,7 +7,18 @@ import './index.css';
 type AppStage = 'intro' | 'landing' | 'tiles' | 'resume';
 
 export default function App() {
-  const [stage, setStage] = useState<AppStage>('intro');
+  // Check sessionStorage so page refresh skips the intro
+  const [stage, setStage] = useState<AppStage>(() => {
+    const saved = sessionStorage.getItem('app-stage');
+    return saved === 'resume' ? 'resume' : 'intro';
+  });
+
+  // Persist the stage when it changes to 'resume'
+  useEffect(() => {
+    if (stage === 'resume') {
+      sessionStorage.setItem('app-stage', 'resume');
+    }
+  }, [stage]);
 
   const handleIntroComplete = () => {
     setStage('landing');
