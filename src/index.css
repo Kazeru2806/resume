@@ -163,6 +163,10 @@ body {
   background: #a855f7;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #0f0d18;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 14px;
